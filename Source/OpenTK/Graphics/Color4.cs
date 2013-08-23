@@ -46,21 +46,25 @@ namespace OpenTK.Graphics
         /// <summary>
         /// The red component of this Color4 structure.
         /// </summary>
+        [XmlAttribute("R")]
         public float R;
         
         /// <summary>
         /// The green component of this Color4 structure.
         /// </summary>
+        [XmlAttribute("G")]
         public float G;
         
         /// <summary>
         /// The blue component of this Color4 structure.
         /// </summary>
+        [XmlAttribute("B")]
         public float B;
         
         /// <summary>
         /// The alpha component of this Color4 structure.
         /// </summary>
+        [XmlAttribute("A")]
         public float A;
 
         #endregion

@@ -41,11 +41,13 @@ namespace OpenTK
         /// <summary>
         /// The X component of the Vector2.
         /// </summary>
+        [XmlAttribute("X")]
         public float X;
 
         /// <summary>
         /// The Y component of the Vector2.
         /// </summary>
+        [XmlAttribute("Y")]
         public float Y;
 
         #endregion

@@ -24,6 +24,7 @@ SOFTWARE.
 
 using System;
 using System.Runtime.InteropServices;
+using System.Xml.Serialization;
 
 namespace OpenTK
 {
@@ -99,6 +100,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the first column of this matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector3 Column0
         {
             get { return new Vector3(Row0.X, Row1.X, Row2.X); }
@@ -108,6 +110,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the second column of this matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector3 Column1
         {
             get { return new Vector3(Row0.Y, Row1.Y, Row2.Y); }
@@ -117,31 +120,37 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the value at row 1, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M11 { get { return Row0.X; } set { Row0.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 1, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M12 { get { return Row0.Y; } set { Row0.Y = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M21 { get { return Row1.X; } set { Row1.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M22 { get { return Row1.Y; } set { Row1.Y = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 3, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M31 { get { return Row2.X; } set { Row2.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 3, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M32 { get { return Row2.Y; } set { Row2.Y = value; } }
 
         #endregion

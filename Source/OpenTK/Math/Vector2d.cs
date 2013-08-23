@@ -36,9 +36,11 @@ namespace OpenTK
         #region Fields
 
         /// <summary>The X coordinate of this instance.</summary>
+        [XmlAttribute("X")]
         public double X;
 
         /// <summary>The Y coordinate of this instance.</summary>
+        [XmlAttribute("Y")]
         public double Y;
 
         /// <summary>

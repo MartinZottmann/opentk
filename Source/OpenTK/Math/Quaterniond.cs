@@ -85,29 +85,31 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets an OpenTK.Vector3d with the X, Y and Z components of this instance.
         /// </summary>
+        [XmlIgnore]
         public Vector3d Xyz { get { return xyz; } set { xyz = value; } }
 
         /// <summary>
         /// Gets or sets the X component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("X")]
         public double X { get { return xyz.X; } set { xyz.X = value; } }
 
         /// <summary>
         /// Gets or sets the Y component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("Y")]
         public double Y { get { return xyz.Y; } set { xyz.Y = value; } }
 
         /// <summary>
         /// Gets or sets the Z component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("Z")]
         public double Z { get { return xyz.Z; } set { xyz.Z = value; } }
 
         /// <summary>
         /// Gets or sets the W component of this instance.
         /// </summary>
+        [XmlAttribute("W")]
         public double W { get { return w; } set { w = value; } }
         
         #endregion

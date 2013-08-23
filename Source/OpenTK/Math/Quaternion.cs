@@ -85,29 +85,31 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets an OpenTK.Vector3 with the X, Y and Z components of this instance.
         /// </summary>
+        [XmlIgnore]
         public Vector3 Xyz { get { return xyz; } set { xyz = value; } }
 
         /// <summary>
         /// Gets or sets the X component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("X")]
         public float X { get { return xyz.X; } set { xyz.X = value; } }
 
         /// <summary>
         /// Gets or sets the Y component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("Y")]
         public float Y { get { return xyz.Y; } set { xyz.Y = value; } }
 
         /// <summary>
         /// Gets or sets the Z component of this instance.
         /// </summary>
-        [XmlIgnore]
+        [XmlAttribute("Z")]
         public float Z { get { return xyz.Z; } set { xyz.Z = value; } }
 
         /// <summary>
         /// Gets or sets the W component of this instance.
         /// </summary>
+        [XmlAttribute("W")]
         public float W { get { return w; } set { w = value; } }
 
         #endregion

@@ -38,9 +38,11 @@ namespace OpenTK
         #region Fields
 
         /// <summary>The X component of the Half2.</summary>
+        [XmlAttribute("X")]
         public Half X;
 
         /// <summary>The Y component of the Half2.</summary>
+        [XmlAttribute("Y")]
         public Half Y;
 
         #endregion

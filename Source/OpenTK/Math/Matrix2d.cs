@@ -24,6 +24,7 @@ SOFTWARE.
 
 using System;
 using System.Runtime.InteropServices;
+using System.Xml.Serialization;
 
 namespace OpenTK
 {
@@ -107,6 +108,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the first column of this matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2d Column0
         {
             get { return new Vector2d(Row0.X, Row1.X); }
@@ -116,6 +118,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the second column of this matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2d Column1
         {
             get { return new Vector2d(Row0.Y, Row1.Y); }
@@ -125,21 +128,25 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the value at row 1, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public double M11 { get { return Row0.X; } set { Row0.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 1, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public double M12 { get { return Row0.Y; } set { Row0.Y = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public double M21 { get { return Row1.X; } set { Row1.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public double M22 { get { return Row1.Y; } set { Row1.Y = value; } }
 
         #endregion

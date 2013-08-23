@@ -39,15 +39,19 @@ namespace OpenTK
         #region Public Fields
 
         /// <summary>The X component of the Half4.</summary>
+        [XmlAttribute("X")]
         public Half X;
 
         /// <summary>The Y component of the Half4.</summary>
+        [XmlAttribute("Y")]
         public Half Y;
 
         /// <summary>The Z component of the Half4.</summary>
+        [XmlAttribute("Z")]
         public Half Z;
 
         /// <summary>The W component of the Half4.</summary>
+        [XmlAttribute("W")]
         public Half W;
 
         #endregion Public Fields

@@ -24,6 +24,7 @@ SOFTWARE.
 
 using System;
 using System.Runtime.InteropServices;
+using System.Xml.Serialization;
 
 namespace OpenTK
 {
@@ -92,6 +93,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the first column of the matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2 Column0
         {
             get { return new Vector2(Row0.X, Row1.X); }
@@ -101,6 +103,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the second column of the matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2 Column1
         {
             get { return new Vector2(Row0.Y, Row1.Y); }
@@ -110,6 +113,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the third column of the matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2 Column2
         {
             get { return new Vector2(Row0.Z, Row1.Z); }
@@ -119,6 +123,7 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the fourth column of the matrix.
         /// </summary>
+        [XmlIgnore]
         public Vector2 Column3
         {
             get { return new Vector2(Row0.W, Row1.W); }
@@ -128,41 +133,49 @@ namespace OpenTK
         /// <summary>
         /// Gets or sets the value at row 1, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M11 { get { return Row0.X; } set { Row0.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 1, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M12 { get { return Row0.Y; } set { Row0.Y = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 1, column 3 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M13 { get { return Row0.Z; } set { Row0.Z = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 1, column 4 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M14 { get { return Row0.W; } set { Row0.W = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 1 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M21 { get { return Row1.X; } set { Row1.X = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 2 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M22 { get { return Row1.Y; } set { Row1.Y = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 3 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M23 { get { return Row1.Z; } set { Row1.Z = value; } }
 
         /// <summary>
         /// Gets or sets the value at row 2, column 4 of this instance.
         /// </summary>
+        [XmlIgnore]
         public float M24 { get { return Row1.W; } set { Row1.W = value; } }
 
         #endregion

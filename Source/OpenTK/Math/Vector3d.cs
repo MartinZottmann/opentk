@@ -40,16 +40,19 @@ namespace OpenTK
         /// <summary>
         /// The X component of the Vector3.
         /// </summary>
+        [XmlAttribute("X")]
         public double X;
 
         /// <summary>
         /// The Y component of the Vector3.
         /// </summary>
+        [XmlAttribute("Y")]
         public double Y;
 
         /// <summary>
         /// The Z component of the Vector3.
         /// </summary>
+        [XmlAttribute("Z")]
         public double Z;
 
         #endregion

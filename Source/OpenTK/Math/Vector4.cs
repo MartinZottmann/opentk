@@ -40,21 +40,25 @@ namespace OpenTK
         /// <summary>
         /// The X component of the Vector4.
         /// </summary>
+        [XmlAttribute("X")]
         public float X;
 
         /// <summary>
         /// The Y component of the Vector4.
         /// </summary>
+        [XmlAttribute("Y")]
         public float Y;
 
         /// <summary>
         /// The Z component of the Vector4.
         /// </summary>
+        [XmlAttribute("Z")]
         public float Z;
 
         /// <summary>
         /// The W component of the Vector4.
         /// </summary>
+        [XmlAttribute("W")]
         public float W;
 
         /// <summary>
