@@ -149,6 +149,27 @@ namespace OpenTK
         [XmlIgnore]
         public float M22 { get { return Row1.Y; } set { Row1.Y = value; } }
 
+        /// <summary>
+        /// Gets or sets the values along the main diagonal of the matrix.
+        /// </summary>
+        public Vector2 Diagonal
+        {
+            get
+            {
+                return new Vector2(Row0.X, Row1.Y);
+            }
+            set
+            {
+                Row0.X = value.X;
+                Row1.Y = value.Y;
+            }
+        }
+
+        /// <summary>
+        /// Gets the trace of the matrix, the sum of the values along the diagonal.
+        /// </summary>
+        public float Trace { get { return Row0.X + Row1.Y; } }
+
         #endregion
 
         #region Indexers
@@ -168,7 +189,7 @@ namespace OpenTK
             {
                 if (rowIndex == 0) Row0[columnIndex] = value;
                 else if (rowIndex == 1) Row1[columnIndex] = value;
-                throw new IndexOutOfRangeException("You tried to set this matrix at: (" + rowIndex + ", " + columnIndex + ")");
+                else throw new IndexOutOfRangeException("You tried to set this matrix at: (" + rowIndex + ", " + columnIndex + ")");
             }
         }
 

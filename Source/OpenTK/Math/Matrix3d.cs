@@ -207,7 +207,29 @@ namespace OpenTK
         /// </summary>
         [XmlIgnore]
         public double M33 { get { return Row2.Z; } set { Row2.Z = value; } }
-        
+
+        /// <summary>
+        /// Gets or sets the values along the main diagonal of the matrix.
+        /// </summary>
+        public Vector3d Diagonal
+        {
+            get
+            {
+                return new Vector3d(Row0.X, Row1.Y, Row2.Z);
+            }
+            set
+            {
+                Row0.X = value.X;
+                Row1.Y = value.Y;
+                Row2.Z = value.Z;
+            }
+        }
+
+        /// <summary>
+        /// Gets the trace of the matrix, the sum of the values along the diagonal.
+        /// </summary>
+        public double Trace { get { return Row0.X + Row1.Y + Row2.Z; } }
+
         #endregion
 
         #region Indexers
@@ -229,7 +251,7 @@ namespace OpenTK
                 if (rowIndex == 0) Row0[columnIndex] = value;
                 else if (rowIndex == 1) Row1[columnIndex] = value;
                 else if (rowIndex == 2) Row2[columnIndex] = value;
-                throw new IndexOutOfRangeException("You tried to set this matrix at: (" + rowIndex + ", " + columnIndex + ")");
+                else throw new IndexOutOfRangeException("You tried to set this matrix at: (" + rowIndex + ", " + columnIndex + ")");
             }
         }
 

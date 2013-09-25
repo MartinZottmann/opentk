@@ -510,9 +510,19 @@ namespace OpenTK.Platform.MacOS
                     }
                     return OSStatus.NoError;
 
-                case MouseEventKind.WheelMoved:
-                    float delta = API.GetEventMouseWheelDelta(inEvent);
-                    InputDriver.Mouse[0].WheelPrecise += delta;
+                case MouseEventKind.WheelMoved:    // older, integer resolution only
+                    {
+                        // this is really an int, we use a float to avoid clipping the wheel value
+                        float delta = API.GetEventMouseWheelDelta (inEvent);
+                        InputDriver.Mouse[0].WheelPrecise += delta;
+                    }
+                    return OSStatus.NoError;
+
+                case MouseEventKind.WheelScroll:   // newer, more precise X and Y scroll
+                    {
+                        API.ScrollDelta delta = API.GetEventWheelScroll(inEvent);
+                        InputDriver.Mouse[0].WheelPrecise += delta.deltaY;
+                    }
                     return OSStatus.NoError;
 
                 case MouseEventKind.MouseMoved:
@@ -607,19 +617,19 @@ namespace OpenTK.Platform.MacOS
             Input.KeyboardDevice keyboard = InputDriver.Keyboard[0];
 
             if (keyboard[OpenTK.Input.Key.AltLeft] ^ option)
-                keyboard.SetKey(OpenTK.Input.Key.AltLeft, (uint)MacOSKeyModifiers.Option, option);
+                keyboard.SetKey(OpenTK.Input.Key.AltLeft, (uint)MacOSKeyCode.OptionAlt, option);
             
             if (keyboard[OpenTK.Input.Key.ShiftLeft] ^ shift)
-                keyboard.SetKey(OpenTK.Input.Key.ShiftLeft, (uint)MacOSKeyModifiers.Shift, shift);
+                keyboard.SetKey(OpenTK.Input.Key.ShiftLeft, (uint)MacOSKeyCode.Shift, shift);
             
             if (keyboard[OpenTK.Input.Key.WinLeft] ^ command)
-                keyboard.SetKey(OpenTK.Input.Key.WinLeft, (uint)MacOSKeyModifiers.Command, command);
+                keyboard.SetKey(OpenTK.Input.Key.WinLeft, (uint)MacOSKeyCode.Command, command);
             
             if (keyboard[OpenTK.Input.Key.ControlLeft] ^ control)
-                keyboard.SetKey(OpenTK.Input.Key.ControlLeft, (uint)MacOSKeyModifiers.Control, control);
+                keyboard.SetKey(OpenTK.Input.Key.ControlLeft, (uint)MacOSKeyCode.Control, control);
             
             if (keyboard[OpenTK.Input.Key.CapsLock] ^ caps)
-                keyboard.SetKey(OpenTK.Input.Key.CapsLock, (uint)MacOSKeyModifiers.CapsLock, caps);
+                keyboard.SetKey(OpenTK.Input.Key.CapsLock, (uint)MacOSKeyCode.CapsLock, caps);
             
         }
 
